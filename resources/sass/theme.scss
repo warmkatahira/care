@@ -1,0 +1,19 @@
+$main_color: #F7E7CE;
+$sub_color: #654321;
+$third_color: #FFFFF0;
+
+// 画面全体に適用するスタイル
+body{
+    background-color: $main_color;
+    font-family: 'Kosugi Maru';
+}
+
+// 英語のフォント
+.LilitaOne {
+    font-family: 'Lilita One'
+}
+
+// ひらがなのフォント
+.CherryBombOne {
+    font-family: 'Cherry Bomb One'
+}
