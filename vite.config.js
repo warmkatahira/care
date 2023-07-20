@@ -7,11 +7,11 @@ export default defineConfig({
             host: 'localhost',
         },
     },
-	plugins: [
-		laravel([
+    plugins: [
+        laravel([
             'resources/css/app.css',
-            'resources/js/app.js',
-            'resources/sass/theme.scss',
-		]),
-	],
+			'resources/js/app.js',
+			'resources/sass/theme.scss',
+        ]),
+    ],
 });

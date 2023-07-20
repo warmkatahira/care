@@ -6,6 +6,9 @@
 
         <title>Care</title>
 
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{{ asset('image/favicon.svg') }}">
+
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -20,10 +23,10 @@
     </head>
     <body>
         <p class="LilitaOne text-6xl text-theme-sub text-center mt-3">Care</p>
-        <div class="flex justify-around mx-5 mt-5">
-            <a href="" class="CherryBombOne text-4xl text-theme-sub p-20 mx-10 bg-theme-third w-80 text-center">ごはん</a>
-            <a href="" class="CherryBombOne text-4xl text-theme-sub p-20 mx-10 bg-theme-third w-80 text-center">たいじゅう</a>
-            <a href="" class="CherryBombOne text-4xl text-theme-sub p-20 mx-10 bg-theme-third w-80 text-center">かんり</a>
+        <div class="grid grid-cols-12 gap-4 mt-5 mx-5">
+            <a href="{{ route('meal.index') }}" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">ごはん</a>
+            <a href="" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">たいじゅう</a>
+            <a href="" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">かんり</a>
         </div>
     </body>
 </html>
