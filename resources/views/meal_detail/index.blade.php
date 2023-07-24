@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="mt-1 xl:mt-2 mb-5">
+    <div class="mt-1 xl:mt-2 mb-5 px-0.5">
         <x-title text="ごはんのかくにん" />
         <div class="grid grid-cols-12 mt-2">
             <p class="CherryBombOne text-center text-theme-third bg-theme-sub col-span-12 xl:col-span-1 py-1">ひづけ</p>
