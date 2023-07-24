@@ -1,7 +1,7 @@
 @vite(['resources/js/meal/meal_create.js'])
 
 <x-app-layout>
-    <div class="mt-1 xl:mt-2 mb-5">
+    <div class="mt-1 xl:mt-2 mb-5 px-0.5">
         <x-title text="ごはんのとうろく" />
         <x-validation-error-msg />
         <form method="POST" action="{{ route('meal_create.create') }}" id="meal_create_form" class="m-0 mt-2">
