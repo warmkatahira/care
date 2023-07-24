@@ -15,8 +15,8 @@
         </div>
         @foreach($meal_history_details as $meal_history_detail)
             <div class="grid grid-cols-12 mt-2 p-5 bg-theme-third">
-                <div class="text-center">
-                    <img src="{{ asset($meal_history_detail->food->food_image_path) }}" class="inline-block col-span-12 xl:col-span-1 w-40 xl:w-20 h-40 xl:h-20">
+                <div class="text-center col-span-12 xl:col-span-1">
+                    <img src="{{ asset($meal_history_detail->food->food_image_path) }}" class="inline-block w-40 xl:w-20 h-40 xl:h-20">
                 </div>
                 <p class="text-theme-sub col-span-12 xl:col-span-10 py-2 xl:py-7">{{ '['.$meal_history_detail->food->food_category->food_category_name.']'.'['.$meal_history_detail->food->food_brand.']'.$meal_history_detail->food->food_name }}</p>
                 <p class="text-right pr-2 text-theme-sub col-span-12 xl:col-span-1 py-2 xl:py-7">{{ $meal_history_detail->amount_of_food.' g' }}</p>
