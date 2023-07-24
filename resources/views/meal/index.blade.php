@@ -21,7 +21,7 @@
                     @if(!empty($date))
                         @foreach($date as $item)
                             <div class="flex flex-col">
-                                <a href="{{ route('meal_detail.index', ['meal_history_id' => $item['meal_history_id']]) }}" class="text-center text-1px xl:text-sm bg-rose-200 mb-1 xl:mb-2">{{ \Carbon\CarbonImmutable::parse($item['meal_time'])->isoFormat('HH時mm分') }}</a>
+                                <a href="{{ route('meal_detail.index', ['meal_history_id' => $item['meal_history_id']]) }}" class="text-center text-10px xl:text-sm bg-rose-200 mb-1 xl:mb-2">{{ \Carbon\CarbonImmutable::parse($item['meal_time'])->isoFormat('HH時mm分') }}</a>
                             </div>
                         @endforeach
                     @endif
