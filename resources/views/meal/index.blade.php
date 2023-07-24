@@ -17,7 +17,7 @@
         <div class="grid grid-cols-7">
             @foreach($date_arr as $key => $date)
                 <div class="col-span-1 px-1 pt-1 bg-theme-third border border-theme-sub mr-0.5 mb-0.5 h-20">
-                    <p class="text-1px xl:text-sm">{{ $key }}</p>
+                    <p class="text-xs xl:text-sm">{{ $key }}</p>
                     @if(!empty($date))
                         @foreach($date as $item)
                             <div class="flex flex-col">
