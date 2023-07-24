@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Meal\MealController;
+use App\Http\Controllers\Meal\MealCreateController;
+use App\Http\Controllers\Meal\MealDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +38,17 @@ Route::middleware('auth')->group(function () {
         Route::get('', 'index')->name('index');
     });
 // ★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆ ごはん ★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆
-    // -+-+-+-+-+-+-+-+-+-+-+-+ ごはん -+-+-+-+-+-+-+-+-+-+-+-+
+    // -+-+-+-+-+-+-+-+-+-+-+-+ ごはんTop -+-+-+-+-+-+-+-+-+-+-+-+
     Route::controller(MealController::class)->prefix('meal')->name('meal.')->group(function(){
+        Route::get('', 'index')->name('index');
+    });
+    // -+-+-+-+-+-+-+-+-+-+-+-+ ごはんとうろく -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(MealCreateController::class)->prefix('meal_create')->name('meal_create.')->group(function(){
+        Route::get('', 'index')->name('index');
+        Route::post('create', 'create')->name('create');
+    });
+    // -+-+-+-+-+-+-+-+-+-+-+-+ ごはん確認 -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(MealDetailController::class)->prefix('meal_detail')->name('meal_detail.')->group(function(){
         Route::get('', 'index')->name('index');
     });
 

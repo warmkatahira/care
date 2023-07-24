@@ -27,7 +27,7 @@
             <!-- ナビゲーションメニュー -->
             @include('layouts.navigation')
             <!-- ページコンテンツ -->
-            <main class="mx-5">
+            <main class="mx-0 xl:mx-5">
                 {{ $slot }}
             </main>
         </div>

@@ -22,6 +22,9 @@ module.exports = {
                     'third': "#FFFFF0",
                 },
             },
+            fontSize: {
+                '1px': "1px",
+            },
         },
     },
 

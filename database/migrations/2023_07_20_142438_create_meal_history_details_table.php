@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamps();
             // 外部キー制約
             $table->foreign('meal_history_id')->references('meal_history_id')->on('meal_histories')->onDelete('cascade');
+            $table->foreign('food_id')->references('food_id')->on('foods');
         });
     }
 

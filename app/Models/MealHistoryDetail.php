@@ -16,4 +16,14 @@ class MealHistoryDetail extends Model
         'food_id',
         'amount_of_food',
     ];
+    // 指定したレコードを取得
+    public static function getSpecify($meal_history_id)
+    {
+        return self::where('meal_history_id', $meal_history_id);
+    }
+    // foodsテーブルとのリレーション
+    public function food()
+    {
+        return $this->belongsTo(Food::class, 'food_id', 'food_id');
+    }
 }

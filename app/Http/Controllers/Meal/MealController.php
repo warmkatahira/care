@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Meal;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\CarbonImmutable;
+use App\Models\MealHistory;
 
 class MealController extends Controller
 {
@@ -31,15 +32,24 @@ class MealController extends Controller
         for($i = 0; $i <= $start_end_diff_days; $i++){
             // 開始日の日付をインスタンス化
             $date = new CarbonImmutable($start_date);
+            // 日付を足す
+            $date = $date->addDays($i);
+            // 該当日付のごはん履歴を取得
+            $meal_histories = MealHistory::whereDate('meal_date', $date)->get();
+            // ごはん履歴を格納する配列を初期化
+            $param = [];
+            // ごはん履歴の文だけループ
+            foreach($meal_histories as $meal_history){
+                $param[] = [
+                    'meal_history_id' => $meal_history->meal_history_id,
+                    'meal_time' => $meal_history->meal_time,
+                ];
+            }
             // 配列に開始日の日付+日数の日付をセット
-            $date_arr[$i] = $date->addDays($i)->toDateString();
+            $date_arr[$date->format('m月d日')] = $param;
         }
-
         return view('meal.index')->with([
             'date_arr' => $date_arr,
         ]);
-
-
-        dd($today, $start_date, $end_date, $date_arr);
     }
 }
