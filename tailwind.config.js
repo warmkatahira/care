@@ -23,7 +23,7 @@ module.exports = {
                 },
             },
             fontSize: {
-                '1px': "1px",
+                '8px': "8px",
             },
         },
     },
