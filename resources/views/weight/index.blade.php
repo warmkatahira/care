@@ -20,7 +20,7 @@
                     @if(!empty($date))
                         @foreach($date as $item)
                             <div class="flex flex-col">
-                                <a href="{{ route('meal_detail.index', ['weight_history_id' => $item['weight_history_id']]) }}" class="text-center text-10px xl:text-sm bg-rose-200 mb-1 xl:mb-2">{{ $item['weight'].' kg' }}</a>
+                                <a href="{{ route('weight_detail.index', ['weight_history_id' => $item['weight_history_id']]) }}" class="text-center text-10px xl:text-sm bg-rose-200 mb-1 xl:mb-2">{{ $item['weight'].' kg' }}</a>
                             </div>
                         @endforeach
                     @else

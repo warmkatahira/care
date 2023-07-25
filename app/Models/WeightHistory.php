@@ -16,4 +16,9 @@ class WeightHistory extends Model
         'weight',
         'memo',
     ];
+    // 指定したレコードを取得
+    public static function getSpecify($weight_history_id)
+    {
+        return self::where('weight_history_id', $weight_history_id);
+    }
 }

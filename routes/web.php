@@ -8,6 +8,7 @@ use App\Http\Controllers\Meal\MealCreateController;
 use App\Http\Controllers\Meal\MealDetailController;
 use App\Http\Controllers\Weight\WeightController;
 use App\Http\Controllers\Weight\WeightCreateController;
+use App\Http\Controllers\Weight\WeightDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,10 @@ Route::middleware('auth')->group(function () {
     Route::controller(WeightCreateController::class)->prefix('weight_create')->name('weight_create.')->group(function(){
         Route::get('', 'index')->name('index');
         Route::post('create', 'create')->name('create');
+    });
+    // -+-+-+-+-+-+-+-+-+-+-+-+ ごはん確認 -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(WeightDetailController::class)->prefix('weight_detail')->name('weight_detail.')->group(function(){
+        Route::get('', 'index')->name('index');
     });
 
 require __DIR__.'/auth.php';
