@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             FoodCategorySeeder::class,
             FoodSeeder::class,
+            PooStatusSeeder::class,
         ]);
     }
 }

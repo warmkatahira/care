@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Services\Meal;
+namespace App\Services\Poo;
 
-use App\Models\MealHistory;
+use App\Models\PooHistory;
 use Carbon\CarbonImmutable;
 
-class MealService
+class PooService
 {
-    public function getMonthMealHistory($month)
+    public function getMonthPooHistory($month)
     {
         // 月指定がない場合
         if(is_null($month)){
@@ -41,14 +41,14 @@ class MealService
             // 日付を足す
             $date = $date->addDays($i);
             // 該当日付のごはん履歴を取得
-            $meal_histories = MealHistory::whereDate('meal_date', $date)->orderBy('meal_time', 'asc')->get();
-            // ごはん履歴を格納する配列を初期化
+            $poo_histories = PooHistory::whereDate('poo_date', $date)->orderBy('poo_time', 'asc')->get();
+            // うんち履歴を格納する配列を初期化
             $param = [];
-            // ごはん履歴の分だけループ
-            foreach($meal_histories as $meal_history){
+            // うんち履歴の分だけループ
+            foreach($poo_histories as $poo_history){
                 $param[] = [
-                    'meal_history_id' => $meal_history->meal_history_id,
-                    'meal_time' => $meal_history->meal_time,
+                    'poo_history_id' => $poo_history->poo_history_id,
+                    'poo_time' => $poo_history->poo_time,
                 ];
             }
             // 配列に開始日の日付+日数の日付をセット

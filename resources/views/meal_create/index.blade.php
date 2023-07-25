@@ -6,7 +6,7 @@
         <x-validation-error-msg />
         <form method="POST" action="{{ route('meal_create.create') }}" id="meal_create_form" class="m-0 mt-2">
             @csrf
-            <x-element.input type="date" label="ひづけ" id="meal_date" :db="null" placeholder="" />
+            <x-element.input type="date" label="ひづけ" id="meal_date" :db="$meal_date" placeholder="" />
             <x-element.input type="time" label="じかん" id="meal_time" :db="null" placeholder="" />
             <x-element.input type="text" label="めも" id="memo" :db="null" placeholder="" />
             <div class="CherryBombOne bg-theme-sub py-1 text-theme-third pl-5 text-base xl:text-xl">

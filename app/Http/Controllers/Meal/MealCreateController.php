@@ -11,12 +11,13 @@ use App\Http\Requests\Meal\MealHistoryCreateRequest;
 
 class MealCreateController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // フードを取得
         $foods = Food::getAll()->get();
         return view('meal_create.index')->with([
             'foods' => $foods,
+            'meal_date' => $request->meal_date,
         ]);
     }
 

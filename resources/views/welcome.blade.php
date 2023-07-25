@@ -26,7 +26,7 @@
         <div class="grid grid-cols-12 gap-4 mt-5 mx-5">
             <a href="{{ route('meal.index') }}" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">ごはん</a>
             <a href="{{ route('weight.index') }}" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">たいじゅう</a>
-            <a href="" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">かんり</a>
+            <a href="{{ route('poo.index') }}" class="col-span-12 xl:col-span-4 CherryBombOne text-4xl text-theme-sub p-10 xl:p-20 bg-theme-third text-center">うんち</a>
         </div>
     </body>
 </html>

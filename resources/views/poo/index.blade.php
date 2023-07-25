@@ -1,8 +1,8 @@
 <x-app-layout>
     <div class="mt-1 xl:mt-2 mb-5 px-0.5">
         <div class="flex flex-row">
-            <a href="{{ route('weight.index', ['month' => $month_change['prev']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5"><i class="las la-caret-square-left la-lg"></i>{{ \Carbon\CarbonImmutable::parse($month_change['prev'])->isoFormat('YYYY年MM月') }}</a>
-            <a href="{{ route('weight.index', ['month' => $month_change['next']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5 ml-auto">{{ \Carbon\CarbonImmutable::parse($month_change['next'])->isoFormat('YYYY年MM月') }}<i class="las la-caret-square-right la-lg"></i></a>
+            <a href="{{ route('poo.index', ['month' => $month_change['prev']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5"><i class="las la-caret-square-left la-lg"></i>{{ \Carbon\CarbonImmutable::parse($month_change['prev'])->isoFormat('YYYY年MM月') }}</a>
+            <a href="{{ route('poo.index', ['month' => $month_change['next']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5 ml-auto">{{ \Carbon\CarbonImmutable::parse($month_change['next'])->isoFormat('YYYY年MM月') }}<i class="las la-caret-square-right la-lg"></i></a>
         </div>
         <div class="grid grid-cols-7 gap-x-0.5 mb-0.5 mt-1 xl:mt-2">
             <p class="col-span-1 bg-theme-third border border-theme-sub text-center">日</p>
@@ -15,17 +15,15 @@
         </div>
         <div class="grid grid-cols-7 gap-x-0.5">
             @foreach($date_arr as $key => $date)
-                <div class="col-span-1 px-1 pt-1 bg-theme-third border border-theme-sub mb-0.5 h-20">
+                <div class="col-span-1 px-1 pt-1 bg-theme-third border border-theme-sub mb-0.5 h-20 overflow-scroll overflow-y-scroll">
                     <div class="flex flex-row">
                         <p class="text-10px xl:text-sm">{{ \Carbon\CarbonImmutable::parse($key)->isoFormat('MM/DD') }}</p>
-                        @if(empty($date))
-                            <a href="{{ route('weight_create.index', ['weight_date' => $key]) }}" class="text-center text-10px xl:text-sm ml-auto"><i class="las la-weight la-lg"></i></a>
-                        @endif
+                        <a href="{{ route('poo_create.index', ['poo_date' => $key]) }}" class="text-center text-10px xl:text-sm ml-auto"><i class="las la-poo la-lg"></i></a>
                     </div>
                     @if(!empty($date))
                         @foreach($date as $item)
-                            <div class="flex flex-col bg-rose-200">
-                                <a href="{{ route('weight_detail.index', ['weight_history_id' => $item['weight_history_id']]) }}" class="text-center text-10px xl:text-sm py-5 xl:py-4">{{ $item['weight'].' kg' }}</a>
+                            <div class="flex flex-col">
+                                <a href="{{ route('poo_detail.index', ['poo_history_id' => $item['poo_history_id']]) }}" class="text-center text-10px xl:text-sm bg-rose-200 mb-1 xl:mb-2">{{ \Carbon\CarbonImmutable::parse($item['poo_time'])->isoFormat('HH:mm') }}</a>
                             </div>
                         @endforeach
                     @endif

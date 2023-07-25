@@ -9,6 +9,9 @@ use App\Http\Controllers\Meal\MealDetailController;
 use App\Http\Controllers\Weight\WeightController;
 use App\Http\Controllers\Weight\WeightCreateController;
 use App\Http\Controllers\Weight\WeightDetailController;
+use App\Http\Controllers\Poo\PooController;
+use App\Http\Controllers\Poo\PooCreateController;
+use App\Http\Controllers\Poo\PooDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +69,20 @@ Route::middleware('auth')->group(function () {
     });
     // -+-+-+-+-+-+-+-+-+-+-+-+ ごはん確認 -+-+-+-+-+-+-+-+-+-+-+-+
     Route::controller(WeightDetailController::class)->prefix('weight_detail')->name('weight_detail.')->group(function(){
+        Route::get('', 'index')->name('index');
+    });
+// ★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆ うんち ★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆
+    // -+-+-+-+-+-+-+-+-+-+-+-+ うんちTop -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(PooController::class)->prefix('poo')->name('poo.')->group(function(){
+        Route::get('', 'index')->name('index');
+    });
+    // -+-+-+-+-+-+-+-+-+-+-+-+ うんちとうろく -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(PooCreateController::class)->prefix('poo_create')->name('poo_create.')->group(function(){
+        Route::get('', 'index')->name('index');
+        Route::post('create', 'create')->name('create');
+    });
+    // -+-+-+-+-+-+-+-+-+-+-+-+ うんち確認 -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(PooDetailController::class)->prefix('poo_detail')->name('poo_detail.')->group(function(){
         Route::get('', 'index')->name('index');
     });
 
