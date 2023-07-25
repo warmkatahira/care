@@ -2,5 +2,5 @@
     <p>{{ $label }}</p>
 </div>
 <div class="bg-theme-third px-2 xl:px-10 py-5">
-    <input type="{{ $type }}" id="{{ $id }}" name="{{ $id }}" class="text-xs xl:text-sm w-full xl:w-96" value="{{ old($id, $db) }}" autocomplete="off">
+    <input type="{{ $type }}" id="{{ $id }}" name="{{ $id }}" class="text-xs xl:text-sm w-full xl:w-96" value="{{ old($id, $db) }}" autocomplete="off" placeholder="{{ $placeholder }}">
 </div>

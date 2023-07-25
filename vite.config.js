@@ -13,6 +13,7 @@ export default defineConfig({
 			'resources/js/app.js',
 			'resources/sass/theme.scss',
             'resources/js/meal/meal_create.js',
+            'resources/js/weight/weight_create.js',
         ]),
     ],
 });

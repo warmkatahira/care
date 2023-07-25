@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Services\Meal;
+namespace App\Services\Weight;
 
-use App\Models\MealHistory;
+use App\Models\WeightHistory;
 use Carbon\CarbonImmutable;
 
-class MealService
+class WeightService
 {
-    public function getMonthMealHistory($month)
+    public function getMonthWeightHistory($month)
     {
         // 月指定がない場合
         if(is_null($month)){
@@ -40,19 +40,20 @@ class MealService
             $date = new CarbonImmutable($start_date);
             // 日付を足す
             $date = $date->addDays($i);
-            // 該当日付のごはん履歴を取得
-            $meal_histories = MealHistory::whereDate('meal_date', $date)->orderBy('meal_time', 'asc')->get();
-            // ごはん履歴を格納する配列を初期化
+            // 該当日付のたいじゅう履歴を取得
+            $weight_history = WeightHistory::whereDate('weight_date', $date)->first();
+            // たいじゅう履歴を格納する配列を初期化
             $param = [];
-            // ごはん履歴の文だけループ
-            foreach($meal_histories as $meal_history){
+            // たいじゅう履歴があれば配列にセット
+            if(!is_null($weight_history)){
+                // たいじゅう履歴をセット
                 $param[] = [
-                    'meal_history_id' => $meal_history->meal_history_id,
-                    'meal_time' => $meal_history->meal_time,
+                    'weight_history_id' => $weight_history->weight_history_id,
+                    'weight' => $weight_history->weight,
                 ];
             }
             // 配列に開始日の日付+日数の日付をセット
-            $date_arr[$date->format('m月d日')] = $param;
+            $date_arr[$date->format('Y-m-d')] = $param;
         }
         return $date_arr;
     }

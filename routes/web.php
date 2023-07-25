@@ -6,6 +6,8 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Meal\MealController;
 use App\Http\Controllers\Meal\MealCreateController;
 use App\Http\Controllers\Meal\MealDetailController;
+use App\Http\Controllers\Weight\WeightController;
+use App\Http\Controllers\Weight\WeightCreateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +52,16 @@ Route::middleware('auth')->group(function () {
     // -+-+-+-+-+-+-+-+-+-+-+-+ ごはん確認 -+-+-+-+-+-+-+-+-+-+-+-+
     Route::controller(MealDetailController::class)->prefix('meal_detail')->name('meal_detail.')->group(function(){
         Route::get('', 'index')->name('index');
+    });
+// ★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆ たいじゅう ★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆
+    // -+-+-+-+-+-+-+-+-+-+-+-+ たいじゅうTop -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(WeightController::class)->prefix('weight')->name('weight.')->group(function(){
+        Route::get('', 'index')->name('index');
+    });
+    // -+-+-+-+-+-+-+-+-+-+-+-+ たいじゅうとうろく -+-+-+-+-+-+-+-+-+-+-+-+
+    Route::controller(WeightCreateController::class)->prefix('weight_create')->name('weight_create.')->group(function(){
+        Route::get('', 'index')->name('index');
+        Route::post('create', 'create')->name('create');
     });
 
 require __DIR__.'/auth.php';
