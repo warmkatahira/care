@@ -1,8 +1,8 @@
 <x-app-layout>
     <div class="mt-1 xl:mt-2 mb-5 px-0.5">
         <div class="flex flex-row">
-            <a href="{{ route('weight.index', ['month' => $month_change['prev']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5 ml-auto"><i class="las la-caret-square-left la-lg"></i>{{ \Carbon\CarbonImmutable::parse($month_change['prev'])->isoFormat('YYYY年MM月') }}</a>
-            <a href="{{ route('weight.index', ['month' => $month_change['next']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5 ml-5">{{ \Carbon\CarbonImmutable::parse($month_change['next'])->isoFormat('YYYY年MM月') }}<i class="las la-caret-square-right la-lg"></i></a>
+            <a href="{{ route('weight.index', ['month' => $month_change['prev']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5"><i class="las la-caret-square-left la-lg"></i>{{ \Carbon\CarbonImmutable::parse($month_change['prev'])->isoFormat('YYYY年MM月') }}</a>
+            <a href="{{ route('weight.index', ['month' => $month_change['next']]) }}" class="text-sm xl:text-xl text-theme-third px-5 bg-theme-sub py-0.5 ml-auto">{{ \Carbon\CarbonImmutable::parse($month_change['next'])->isoFormat('YYYY年MM月') }}<i class="las la-caret-square-right la-lg"></i></a>
         </div>
         <div class="grid grid-cols-7 gap-x-0.5 mb-0.5 mt-1 xl:mt-2">
             <p class="col-span-1 bg-theme-third border border-theme-sub text-center">日</p>
