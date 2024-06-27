@@ -24,4 +24,8 @@ class MealController extends Controller
             'month_change' => $month_change,
         ]);
     }
+
+    public function XXX(){
+        
+    }
 }
