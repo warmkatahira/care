@@ -21,6 +21,7 @@ class MealController extends Controller
         return view('meal.index')->with([
             'date_arr' => $date_arr,
             'month_change' => $month_change,
+            'month_change' => $month_change,
         ]);
     }
 }
